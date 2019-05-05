@@ -1,0 +1,149 @@
+% File generated with DeScribe 2.5.3 and manual edits
+
+% System initialization
+InvertZAxis 1
+
+% Writing configuration 
+GalvoScanMode
+ContinuousMode
+PiezoSettlingTime 10
+GalvoAcceleration 1
+StageVelocity 200
+
+% centers the galvo
+XOffset 0
+YOffset 0
+ZOffset 0
+
+
+
+
+% Adjusts the origin so the DeScribe model looks centered
+%StageGotoX -150
+%StageGotoY -150
+
+%Moves the piezo to the center for alignment
+PiezoGotoX 150
+PiezoGotoY 150
+
+% Writing parameters
+PowerScaling 1.0
+
+% Writing parameters
+var $laserPower = 40
+var $scanSpeed = 10000
+
+LaserPower $laserPower
+ScanSpeed $scanSpeed
+
+var $interfacePos = 0.5
+
+FindInterfaceAt $interfacePos
+PiezoGotoX 21.0
+PiezoGotoY 21.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 20.0
+PiezoGotoY 20.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_1.gwl
+PiezoGotoX 21.0
+PiezoGotoY 151.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 20.0
+PiezoGotoY 150.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_2.gwl
+PiezoGotoX 21.0
+PiezoGotoY 281.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 20.0
+PiezoGotoY 280.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_3.gwl
+PiezoGotoX 151.0
+PiezoGotoY 21.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 150.0
+PiezoGotoY 20.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_4.gwl
+PiezoGotoX 151.0
+PiezoGotoY 151.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 150.0
+PiezoGotoY 150.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_5.gwl
+PiezoGotoX 151.0
+PiezoGotoY 281.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 150.0
+PiezoGotoY 280.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_6.gwl
+PiezoGotoX 281.0
+PiezoGotoY 21.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 280.0
+PiezoGotoY 20.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_7.gwl
+PiezoGotoX 281.0
+PiezoGotoY 151.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 280.0
+PiezoGotoY 150.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_8.gwl
+PiezoGotoX 281.0
+PiezoGotoY 281.0
+PiezoGotoZ 1.0
+Wait 0.1
+
+PiezoGotoX 280.0
+PiezoGotoY 280.0
+PiezoGotoZ 0.0
+Wait 0.1
+
+FindInterfaceAt $interfacePos
+include MS2_field_9.gwl

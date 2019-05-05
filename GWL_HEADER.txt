@@ -1,0 +1,41 @@
+% File generated with DeScribe 2.5.3 and manual edits
+
+% System initialization
+InvertZAxis 1
+
+% Writing configuration 
+GalvoScanMode
+ContinuousMode
+PiezoSettlingTime 10
+GalvoAcceleration 1
+StageVelocity 200
+
+% centers the galvo
+XOffset 0
+YOffset 0
+ZOffset 0
+
+
+
+
+% Adjusts the origin so the DeScribe model looks centered
+%StageGotoX -150
+%StageGotoY -150
+
+%Moves the piezo to the center for alignment
+PiezoGotoX 150
+PiezoGotoY 150
+
+% Writing parameters
+PowerScaling 1.0
+
+% Writing parameters
+var $laserPower = 40
+var $scanSpeed = 10000
+
+LaserPower $laserPower
+ScanSpeed $scanSpeed
+
+var $interfacePos = 0.5
+
+FindInterfaceAt $interfacePos

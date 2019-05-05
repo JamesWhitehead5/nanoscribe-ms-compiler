@@ -1,0 +1,48 @@
+% File generated with DeScribe 2.5.3 and manual edits
+
+% System initialization
+InvertZAxis 1
+
+% Writing configuration 
+GalvoScanMode
+ContinuousMode
+PiezoSettlingTime 10
+GalvoAcceleration 1
+StageVelocity 200
+
+% centers the galvo
+XOffset 0
+YOffset 0
+ZOffset 0
+
+% Adjusts the origin so the DeScribe model looks centered
+StageGotoX -150
+StageGotoY -150
+
+% Writing parameters
+PowerScaling 1.0
+
+% Solid hatch lines writing parameters
+var $solidLaserPower = 40
+var $solidScanSpeed = 10000
+
+% Base writing parameters
+var $baseLaserPower = $solidLaserPower
+var $baseScanSpeed = $solidScanSpeed
+
+% Shell writing parameters
+var $shellLaserPower = 40
+var $shellScanSpeed = 10000
+
+% Scaffold writing parameters
+var $scaffoldLaserPower = 40
+var $scaffoldScanSpeed = 10000
+
+var $interfacePos = 0.5
+
+FindInterfaceAt $interfacePos
+
+PiezoGotoX 150.0
+PiezoGotoY 150.0
+FindInterfaceAt $interfacePos
+include (0, 0).gwl
